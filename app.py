@@ -186,9 +186,9 @@ if st.sidebar.button("Resetar para defaults"):
 
 st.sidebar.caption("Se você não fizer upload, o app usa os valores pré-carregados.")
 
-tabs = st.tabs(["Preços de referência", "Parâmetros do estudo", "Orçamento", "Exportar"])
+tabs = st.tabs(["Parâmetros do estudo", "Orçamento", "Exportar", "Preços de referência"])
 
-with tabs[0]:
+with tabs[3]:
     st.subheader("Preços de referência (já pré-carregados — edite apenas se necessário)")
 
     st.markdown("### Consumíveis")
@@ -216,7 +216,7 @@ with tabs[0]:
         "Você pode ajustar isso conforme sua lógica interna."
     )
 
-with tabs[1]:
+with tabs[0]:
     st.subheader("Parâmetros do estudo")
 
     # ---------- core counts ----------
@@ -590,7 +590,7 @@ with tabs[1]:
         
 ##########################################################
 ##########################################################
-with tabs[2]:
+with tabs[1]:
     st.subheader("Orçamento (calculado)")
 
     # --- ensure parameter tables exist (avoid first-run issues) ---
@@ -820,7 +820,7 @@ with tabs[2]:
 
 ##########################################################
 ##########################################################
-with tabs[3]:
+with tabs[2]:
     st.subheader("Exportar Excel")
 
     if "budget_final" not in st.session_state:
