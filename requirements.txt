@@ -1,0 +1,6 @@
+# Core
+streamlit
+numpy
+pandas
+openpyxl
+scipy
