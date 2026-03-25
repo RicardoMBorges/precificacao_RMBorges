@@ -81,8 +81,8 @@ def default_consumables_ref() -> pd.DataFrame:
         {"Categoria": "Vidros", "Item": "Insert de 150uL", "Fonte": "sigmaaldrich", "Formato": 100, "Preco_unitario": 627.00, "Unidades_por_formato": 100, "Custo_unitario": 6.27, "Unidade_operacional": "un"},
 
         # Padrões e Controles (R$/unidade de kit/frasco)
-        {"Categoria": "Padrões e Controles", "Item": "GIGA KIT Whishart quantitative metabolomics", "Fonte": "WHISHART", "Formato": 1, "Preco_unitario": 300.00, "Unidades_por_formato": 1, "Custo_unitario": 0.00, "Unidade_operacional": "un"},
-        {"Categoria": "Padrões e Controles", "Item": "PRIME KIT Whishart quantitative metabolomics", "Fonte": "WHISHART", "Formato": 1, "Preco_unitario": 250.00, "Unidades_por_formato": 1, "Custo_unitario": 0.00, "Unidade_operacional": "un"},
+        {"Categoria": "Padrões e Controles", "Item": "GIGA KIT Whishart quantitative metabolomics", "Fonte": "WHISHART", "Formato": 1, "Preco_unitario": 300.00, "Unidades_por_formato": 1, "Custo_unitario": 300.00, "Unidade_operacional": "un"},
+        {"Categoria": "Padrões e Controles", "Item": "PRIME KIT Whishart quantitative metabolomics", "Fonte": "WHISHART", "Formato": 1, "Preco_unitario": 250.00, "Unidades_por_formato": 1, "Custo_unitario": 250.00, "Unidade_operacional": "un"},
         {"Categoria": "Padrões e Controles", "Item": "Fatty Acid Methyl Esters Standard Mixture", "Fonte": "SMB00937-1ML", "Formato": 1, "Preco_unitario": 1801.00, "Unidades_por_formato": 1, "Custo_unitario": 1801.00, "Unidade_operacional": "un"},
         {"Categoria": "Padrões e Controles", "Item": "Supelco 37 Component FAME Mix", "Fonte": "CRM47885", "Formato": 1, "Preco_unitario": 665.00, "Unidades_por_formato": 1, "Custo_unitario": 665.00, "Unidade_operacional": "un"},
         {"Categoria": "Padrões e Controles", "Item": "MEGA KIT Whishart quantitative metabolomics", "Fonte": "WHISHART", "Formato": 1, "Preco_unitario": 0.00, "Unidades_por_formato": 1, "Custo_unitario": 0.00, "Unidade_operacional": "un"},
