@@ -57,6 +57,7 @@ def default_consumables_ref() -> pd.DataFrame:
     """
     rows = [
         # Solventes (R$/mL)
+        {"Categoria": "Solventes", "Item": "Água ultrapura", "Fonte": "local", "Formato": 1000, "Preco_unitario": 100.00, "Unidades_por_formato": 1000, "Custo_unitario": 0.18, "Unidade_operacional": "mL"},
         {"Categoria": "Solventes", "Item": "Metanol", "Fonte": "sigmaaldrich", "Formato": 1000, "Preco_unitario": 183.35, "Unidades_por_formato": 1000, "Custo_unitario": 0.18, "Unidade_operacional": "mL"},
         {"Categoria": "Solventes", "Item": "Acetonitrila", "Fonte": "sigmaaldrich", "Formato": 1000, "Preco_unitario": 419.90, "Unidades_por_formato": 1000, "Custo_unitario": 0.42, "Unidade_operacional": "mL"},
         {"Categoria": "Solventes", "Item": "Isopropanol", "Fonte": "sigmaaldrich", "Formato": 1000, "Preco_unitario": 215.65, "Unidades_por_formato": 1000, "Custo_unitario": 0.22, "Unidade_operacional": "mL"},
