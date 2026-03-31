@@ -933,15 +933,43 @@ with tabs[1]:
     )
 
     # -------------------------
-    # Padrões e Controles (un)
+    # Padrões e Controles (regra especial)
     # -------------------------
-    # Aceita "unidades total" e "unidades por amostra" (você já usa isso na UI)
-    add_unit_rows(
-        st.session_state.std_table,
-        categoria_label="Consumíveis - Padrões e Controles",
-        mode_labels=("por amostra", "total"),
-        qty_suffix=" un"
-    )
+    if st.session_state.std_table is not None and not st.session_state.std_table.empty:
+        for _, r in st.session_state.std_table.iterrows():
+            item = str(r.get("Item", "")).strip()
+            mode = str(r.get("Modo", "")).strip().lower()
+            qty = to_float(r.get("Quantidade")) or 0.0
+    
+            ref_row = get_ref_row_by_item(st.session_state.cons_ref, item)
+    
+            preco_unitario = None
+            custo_por_amostra = None
+    
+            if ref_row is not None:
+                preco_unitario = to_float(ref_row.get("Preco_unitario"))
+                custo_por_amostra = to_float(ref_row.get("Custo_unitario"))
+    
+            if "por amostra" in mode:
+                qty_total = qty * n_total
+                qty_label = f"{qty:g} un/amostra × {n_total} = {qty_total:g} un"
+                unit_cost = custo_por_amostra
+                cost_calc = (qty_total * unit_cost) if unit_cost is not None else None
+            else:
+                qty_total = qty
+                qty_label = f"{qty_total:g} un (total)"
+                unit_cost = preco_unitario
+                cost_calc = (qty_total * unit_cost) if unit_cost is not None else None
+    
+            rows.append({
+                "Categoria": "Consumíveis - Padrões e Controles",
+                "Item/Serviço": item,
+                "Quantidade (calc)": qty_label,
+                "Custo unitário (ref)": unit_cost,
+                "Custo (calc)": cost_calc,
+                "Custo (manual)": None,
+                "Observações": ""
+            })
 
     # -------------------------
     # Colunas (corridas total ou unidades total)
