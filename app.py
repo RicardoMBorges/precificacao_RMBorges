@@ -567,7 +567,9 @@ with tabs[0]:
     # ==========================================================
     st.markdown("### Vidros")
     st.caption("Modo: unidades por amostra ou unidades total.")
-
+    with st.expander("Como preencher vidros e como o custo é calculado"):
+        st.markdown(HELP_TEXTS["vidros"])
+        
     g1, g2, g3, g4 = st.columns([3, 2, 2, 1])
     with g1:
         sel_glass = st.selectbox(
@@ -619,7 +621,8 @@ with tabs[0]:
     # ==========================================================
     st.markdown("### Padrões e Controles")
     st.caption("Modo típico: unidades total (kits/frasco). Se quiser por amostra, também pode.")
-
+    with st.expander("Como preencher padrões/controles e como o custo é calculado"):
+        st.markdown(HELP_TEXTS["padroes"])
     s1, s2, s3, s4 = st.columns([3, 2, 2, 1])
     with s1:
         sel_std = st.selectbox(
@@ -671,7 +674,8 @@ with tabs[0]:
     # ==========================================================
     st.markdown("### Colunas")
     st.caption("Modo típico: corridas total (vida útil em corridas).")
-
+    with st.expander("Como preencher colunas e como o custo é calculado"):
+        st.markdown(HELP_TEXTS["colunas"])
     c01, c02, c03, c04 = st.columns([3, 2, 2, 1])
     with c01:
         sel_col = st.selectbox(
@@ -723,7 +727,8 @@ with tabs[0]:
     # ==========================================================
     st.markdown("### Instrumentação (serviços)")
     st.caption("Escolha serviços a partir da tabela de referência.")
-
+    with st.expander("Como preencher instrumentação e como o custo é calculado"):
+        st.markdown(HELP_TEXTS["instrumentacao"])
     addi1, addi2, addi3, addi4 = st.columns([3, 1, 3, 1])
     with addi1:
         sel_inst = st.selectbox(
