@@ -513,6 +513,8 @@ with tabs[0]:
     # ==========================================================
     st.markdown("### Plásticos")
     st.caption("Modo: unidades por amostra ou unidades total.")
+    with st.expander("Como preencher plásticos e como o custo é calculado"):
+        st.markdown(HELP_TEXTS["plasticos"])
 
     p1, p2, p3, p4 = st.columns([3, 2, 2, 1])
     with p1:
