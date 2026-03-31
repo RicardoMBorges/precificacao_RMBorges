@@ -363,12 +363,9 @@ with tabs[3]:
 with tabs[0]:
     st.subheader("Parâmetros do estudo")
 
-with tabs[0]:
-    st.subheader("Parâmetros do estudo")
-
-    # ---------- core counts ----------
     c1, c2, c3 = st.columns(3)
-        with c1:
+
+    with c1:
         n_samples = st.number_input(
             "Número de amostras (biológicas)",
             min_value=0,
@@ -377,6 +374,7 @@ with tabs[0]:
             key="n_samples",
             help=HELP_TEXTS["n_samples"],
         )
+
     with c2:
         n_qc = st.number_input(
             "Número de QCs (somar)",
@@ -386,6 +384,7 @@ with tabs[0]:
             key="n_qc",
             help=HELP_TEXTS["n_qc"],
         )
+
     with c3:
         n_blank = st.number_input(
             "Número de blanks (opcional)",
