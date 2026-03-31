@@ -365,11 +365,32 @@ with tabs[0]:
     # ---------- core counts ----------
     c1, c2, c3 = st.columns(3)
     with c1:
-        n_samples = st.number_input("Número de amostras (biológicas)", min_value=0, value=80, step=1, key="n_samples")
-    with c2:
-        n_qc = st.number_input("Número de QCs (somar)", min_value=0, value=0, step=1, key="n_qc")
-    with c3:
-        n_blank = st.number_input("Número de blanks (opcional)", min_value=0, value=0, step=1, key="n_blank")
+    n_samples = st.number_input(
+        "Número de amostras (biológicas)",
+        min_value=0,
+        value=80,
+        step=1,
+        key="n_samples",
+        help=HELP_TEXTS["n_samples"],
+    )
+with c2:
+    n_qc = st.number_input(
+        "Número de QCs (somar)",
+        min_value=0,
+        value=0,
+        step=1,
+        key="n_qc",
+        help=HELP_TEXTS["n_qc"],
+    )
+with c3:
+    n_blank = st.number_input(
+        "Número de blanks (opcional)",
+        min_value=0,
+        value=0,
+        step=1,
+        key="n_blank",
+        help=HELP_TEXTS["n_blank"],
+    )
 
     n_total = int(n_samples + n_qc + n_blank)
     st.metric("Total de injeções/amostras a cobrar", n_total)
