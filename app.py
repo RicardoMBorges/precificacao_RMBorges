@@ -116,6 +116,144 @@ def default_instrument_ref() -> pd.DataFrame:
     ]
     return pd.DataFrame(rows)
 
+# -------------------------
+# Help texts / explainers
+# -------------------------
+
+HELP_TEXTS = {
+    "n_samples": """
+Número de amostras biológicas reais do estudo.
+Essas amostras normalmente correspondem às amostras experimentais principais
+que serão preparadas, injetadas e cobradas.
+""",
+
+    "n_qc": """
+Número de amostras de controle de qualidade (QC) incluídas no estudo.
+Esses QCs entram no total de preparações/injeções e, portanto, também entram
+no cálculo de consumo e de custo quando o parâmetro estiver definido por amostra.
+""",
+
+    "n_blank": """
+Número de blanks analíticos.
+Blanks também podem consumir solventes, plásticos, tempo de instrumento e corridas,
+dependendo da estratégia analítica adotada. Por isso, neste app eles também entram
+no total de amostras/injeções a cobrar.
+""",
+
+    "solventes": """
+Nesta seção você informa os solventes usados no estudo.
+
+**Como preencher:**
+- Escolha o solvente na lista de referência.
+- Defina se a quantidade será informada como:
+  - **mL por amostra**: o volume será multiplicado pelo número total de amostras/injeções.
+  - **mL total**: o volume será usado diretamente, sem multiplicação.
+
+**Como o custo é calculado:**
+1. O app busca o custo de referência do solvente.
+2. Esse custo é obtido a partir de:
+   **Preço_unitario / Formato**
+   Ex.: frasco de R$ 420,00 com 1000 mL → custo de referência = R$ 0,42/mL
+3. Depois:
+   - se o modo for **mL por amostra**:
+     **custo = (mL por amostra × total de amostras) × custo por mL**
+   - se o modo for **mL total**:
+     **custo = mL total × custo por mL**
+""",
+
+    "plasticos": """
+Nesta seção você informa consumíveis plásticos, como microtubos, ponteiras e filtros.
+
+**Como preencher:**
+- Escolha o item.
+- Defina se a quantidade será:
+  - **unidades por amostra**
+  - **unidades total**
+
+**Como o custo é calculado:**
+1. O custo unitário de referência é calculado como:
+   **Preço_unitario / Formato**
+   Ex.: caixa com 1000 ponteiras por R$ 395,59 → custo = R$ 0,39559 por unidade
+2. Depois:
+   - **unidades por amostra**:
+     **custo = (unidades por amostra × total de amostras) × custo por unidade**
+   - **unidades total**:
+     **custo = unidades totais × custo por unidade**
+""",
+
+    "vidros": """
+Nesta seção você informa vials, inserts e outros itens de vidro.
+
+**Como o custo é calculado:**
+A lógica é a mesma dos plásticos:
+- custo unitário de referência = **Preço_unitario / Formato**
+- depois o valor total depende se você informou:
+  - **unidades por amostra**
+  - **unidades total**
+""",
+
+    "padroes": """
+Nesta seção você informa padrões, controles e kits.
+
+**Como preencher:**
+- Em geral, esses itens são melhor representados como **unidades total**
+  (por exemplo, 1 kit ou 1 frasco para o estudo inteiro).
+- Mas o app também permite **unidades por amostra**, se isso fizer sentido
+  para a sua lógica de cobrança.
+
+**Como o custo é calculado:**
+- custo unitário de referência = **Preço_unitario / Formato**
+- depois:
+  - **unidades total**:
+    **custo = quantidade total × custo por unidade**
+  - **unidades por amostra**:
+    **custo = (quantidade por amostra × total de amostras) × custo por unidade**
+""",
+
+    "colunas": """
+Nesta seção você informa o uso de colunas cromatográficas.
+
+**Como preencher:**
+- O modo mais comum é **corridas total**.
+- Isso é útil quando o custo da coluna foi convertido para custo por corrida.
+
+**Como o custo é calculado:**
+1. O custo de referência normalmente vem de:
+   **Preço_unitario / Formato**
+2. Nesse caso, o campo `Formato` representa a vida útil estimada em corridas.
+   Ex.: coluna de R$ 8.000,00 com vida útil estimada em 800 corridas
+   → custo de referência = R$ 10,00 por corrida
+3. Depois:
+   - **corridas total**:
+     **custo = número de corridas × custo por corrida**
+   - **unidades total**:
+     **custo = unidades × custo de referência**
+""",
+
+    "instrumentacao": """
+Nesta seção você informa serviços de instrumentação cobrados por amostra.
+
+**Como o custo é calculado:**
+- O app usa diretamente o campo **Custo_por_amostra** da tabela de referência.
+- Depois multiplica pelo número total de amostras/injeções.
+
+**Fórmula:**
+**custo = total de amostras × custo por amostra do serviço**
+
+Exemplo:
+- custo por amostra = R$ 66,67
+- total de amostras = 96
+- custo total = 96 × 66,67
+""",
+
+    "orcamento_manual": """
+Na aba de orçamento, o campo **Custo (manual)** substitui o custo calculado automaticamente.
+Isso é útil quando você quer:
+- arredondar valores
+- corrigir um valor específico
+- aplicar uma lógica comercial diferente do custo técnico puro
+"""
+}
 
 # -------------------------
 # Dictionary builder
