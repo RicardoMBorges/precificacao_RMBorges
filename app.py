@@ -790,6 +790,22 @@ with tabs[0]:
 with tabs[1]:
     st.subheader("Orçamento (calculado)")
 
+    with st.expander("Como o orçamento é calculado", expanded=False):
+        st.markdown("""
+    O orçamento é calculado a partir dos parâmetros informados na aba anterior.
+    
+    **Regras gerais:**
+    - Para consumíveis, o custo de referência geralmente vem de:
+      **Preço_unitario / Formato**
+    - Para instrumentação, o custo vem de:
+      **Custo_por_amostra**
+    - Quando o modo é **por amostra**, o app multiplica pelo total de amostras/injeções.
+    - Quando o modo é **total**, o app usa diretamente a quantidade informada.
+    
+    **Importante:**
+    Se o campo **Custo (manual)** for preenchido, ele substitui o custo calculado automaticamente.
+    """)
+
     # --- ensure parameter tables exist (avoid first-run issues) ---
     if "solv_table" not in st.session_state:
         st.session_state.solv_table = pd.DataFrame(columns=["Item", "Modo", "Quantidade"])
