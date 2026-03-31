@@ -786,7 +786,21 @@ with tabs[0]:
 
     if st.button("Limpar lista de serviços", key="clear_inst"):
         st.session_state.inst_table = st.session_state.inst_table.iloc[0:0].copy()
-        
+
+def get_ref_row_by_item(cons_ref: pd.DataFrame, item_name: str):
+    target = norm_key(item_name)
+    if not target:
+        return None
+
+    tmp = cons_ref.copy()
+    tmp["_norm_item"] = tmp["Item"].astype(str).map(norm_key)
+    match = tmp.loc[tmp["_norm_item"] == target]
+
+    if match.empty:
+        return None
+
+    return match.iloc[0]
+
 ##########################################################
 ##########################################################
 with tabs[1]:
