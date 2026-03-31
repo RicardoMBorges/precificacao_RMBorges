@@ -457,23 +457,6 @@ with tabs[0]:
     # ==========================================================
     st.markdown("### Solventes e volumes")
     st.caption("Escolha itens a partir da tabela de referência. Use 'mL por amostra' ou 'mL total'.")
-        with st.expander("Como preencher solventes e como o custo é calculado"):
-    st.markdown(HELP_TEXTS["solventes"])
-
-    sel_solvent = st.selectbox(
-        "Adicionar solvente",
-        options=solvent_options if solvent_options else cons_options_all,
-        index=0 if (solvent_options or cons_options_all) else None,
-        key="sel_solvent_item",
-        help="Selecione o solvente conforme a tabela de preços de referência."
-    )
-    sel_solvent_mode = st.selectbox(
-        "Modo",
-        options=["mL por amostra", "mL total"],
-        index=0,
-        key="sel_solvent_mode",
-        help="Use 'mL por amostra' quando o consumo se repetir para cada amostra. Use 'mL total' quando quiser informar o consumo do estudo inteiro."
-    )
 
     add1, add2, add3, add4 = st.columns([3, 2, 2, 1])
     with add1:
