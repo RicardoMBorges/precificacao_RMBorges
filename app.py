@@ -460,6 +460,14 @@ with c3:
         with st.expander("Como preencher solventes e como o custo é calculado"):
     st.markdown(HELP_TEXTS["solventes"])
 
+    sel_solvent = st.selectbox(
+        "Adicionar solvente",
+        options=solvent_options if solvent_options else cons_options_all,
+        index=0 if (solvent_options or cons_options_all) else None,
+        key="sel_solvent_item",
+        help="Selecione o solvente conforme a tabela de preços de referência."
+    )
+
     add1, add2, add3, add4 = st.columns([3, 2, 2, 1])
     with add1:
         sel_solvent = st.selectbox(
