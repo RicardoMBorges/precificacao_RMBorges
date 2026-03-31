@@ -205,7 +205,7 @@ Nesta seção você informa padrões, controles e kits.
 - custo unitário de referência = **Preço_unitario / Formato**
 - depois:
   - **unidades total**:
-    **custo = quantidade total × custo por unidade**
+    **custo = quantidade total × custo por unidade** (considerar 1 kit inteiro -uma unidade comercial do padráo- para um estudo)
   - **unidades por amostra**:
     **custo = (quantidade por amostra × total de amostras) × custo por unidade**
 """,
