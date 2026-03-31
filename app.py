@@ -457,6 +457,8 @@ with c3:
     # ==========================================================
     st.markdown("### Solventes e volumes")
     st.caption("Escolha itens a partir da tabela de referência. Use 'mL por amostra' ou 'mL total'.")
+        with st.expander("Como preencher solventes e como o custo é calculado"):
+    st.markdown(HELP_TEXTS["solventes"])
 
     add1, add2, add3, add4 = st.columns([3, 2, 2, 1])
     with add1:
