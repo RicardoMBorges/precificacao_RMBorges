@@ -192,23 +192,26 @@ A lógica é a mesma dos plásticos:
   - **unidades por amostra**
   - **unidades total**
 """,
-
+    
     "padroes": """
 Nesta seção você informa padrões, controles e kits.
 
 **Como preencher:**
-- Em geral, esses itens são melhor representados como **unidades total**
-  (por exemplo, 1 kit ou 1 frasco para o estudo inteiro).
-- Mas o app também permite **unidades por amostra**, se isso fizer sentido
-  para a sua lógica de cobrança.
+- Use **unidades total** quando quiser cobrar o item como um kit/frasco completo.
+- Use **unidades por amostra** quando quiser ratear ou aplicar um custo por amostra com base no campo `Custo_unitario`.
 
-**Como o custo é calculado:**
-- custo unitário de referência = **Preço_unitario / Formato**
-- depois:
-  - **unidades total**:
-    **custo = quantidade total × custo por unidade** (considerar 1 kit inteiro -uma unidade comercial do padráo- para um estudo)
-  - **unidades por amostra**:
-    **custo = (quantidade por amostra × total de amostras) × custo por unidade**
+**Como o custo é calculado nesta categoria:**
+- **unidades total**:
+  o app usa o campo **Preco_unitario**
+  Fórmula:
+  **custo = quantidade total × Preco_unitario**
+
+- **unidades por amostra**:
+  o app usa o campo **Custo_unitario**
+  Fórmula:
+  **custo = (quantidade por amostra × total de amostras) × Custo_unitario**
+
+Assim, para kits, o valor total do kit e o valor por amostra podem seguir lógicas diferentes.
 """,
 
     "colunas": """
