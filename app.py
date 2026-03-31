@@ -359,6 +359,10 @@ with tabs[3]:
         "Você pode ajustar isso conforme sua lógica interna."
     )
 
+
+with tabs[0]:
+    st.subheader("Parâmetros do estudo")
+
 with tabs[0]:
     st.subheader("Parâmetros do estudo")
 
