@@ -483,7 +483,7 @@ with tabs[0]:
     # ==========================================================
     st.markdown("### Solventes e volumes")
     st.caption("Escolha itens a partir da tabela de referência. Use 'mL por amostra' ou 'mL total'.")
-
+    st.info("Fórmula: custo = quantidade total em mL × custo de referência por mL")
     add1, add2, add3, add4 = st.columns([3, 2, 2, 1])
     with add1:
         sel_solvent = st.selectbox(
@@ -750,6 +750,7 @@ with tabs[0]:
     # ==========================================================
     st.markdown("### Instrumentação (serviços)")
     st.caption("Escolha serviços a partir da tabela de referência.")
+    st.info("Fórmula: custo = total de amostras/injeções × custo por amostra do serviço")
     with st.expander("Como preencher instrumentação e como o custo é calculado"):
         st.markdown(HELP_TEXTS["instrumentacao"])
     addi1, addi2, addi3, addi4 = st.columns([3, 1, 3, 1])
