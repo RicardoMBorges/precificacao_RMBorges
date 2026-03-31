@@ -363,6 +363,29 @@ with tabs[3]:
 with tabs[0]:
     st.subheader("Parâmetros do estudo")
 
+    with st.expander("Guia rápido de preenchimento desta aba", expanded=True):
+        st.markdown("""
+    Preencha esta aba para definir **como o estudo consome recursos**.
+    
+    A lógica do app é:
+    
+    1. Você define o número total de amostras/injeções:
+       **amostras biológicas + QCs + blanks**
+    2. Você informa o consumo de cada categoria:
+       - solventes
+       - plásticos
+       - vidros
+       - padrões/controles
+       - colunas
+       - instrumentação
+    3. O app transforma os preços de referência em custo operacional:
+       - consumíveis: geralmente **Preço_unitario / Formato**
+       - instrumentação: **Custo_por_amostra**
+    4. O orçamento final é calculado automaticamente.
+    
+    Use os expanders de cada seção para entender a lógica de cálculo de cada parâmetro.
+    """)
+    
     c1, c2, c3 = st.columns(3)
 
     with c1:
