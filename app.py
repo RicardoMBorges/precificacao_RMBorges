@@ -117,6 +117,7 @@ def default_instrument_ref() -> pd.DataFrame:
     rows = [
         {"Categoria": "Aquisição LC–MS/MS (terceirizado)", "Servico": "CEMBIO", "Formato": 40, "Preco_unitario_60min": 100.00, "Custo_por_amostra": 66.67},
         {"Categoria": "Aquisição LC–QQQ (terceirizado)", "Servico": "FIRJAN", "Formato": 40, "Preco_unitario_60min": 130.00, "Custo_por_amostra": 86.66}
+        {"Categoria": "Aquisição GC–Q (terceirizado)", "Servico": "LabCrom-IPPN", "Formato": 40, "Preco_unitario_60min": 130.00, "Custo_por_amostra": 86.66}
     ]
     return pd.DataFrame(rows)
 
