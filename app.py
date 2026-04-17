@@ -107,8 +107,8 @@ def default_consumables_ref() -> pd.DataFrame:
         {"Categoria": "Colunas HPLC", "Item": "ACQUITY UPLC CSH C18 Column, 2.1 mm X 100 mm", "Fonte": "Waters", "Formato": 800, "Preco_unitario": 8690.00, "Unidades_por_formato": 800, "Custo_unitario": 10.86, "Unidade_operacional": "corrida"},
 
         # Colunas GC (0 por enquanto)
-        {"Categoria": "Colunas GC", "Item": "COLUNA GC DB-5MS ULTRA INERTE 30M X 0,25MM X 0,25UM", "Fonte": "Hexis", "Formato": 800, "Preco_unitario": 0.00, "Unidades_por_formato": 800, "Custo_unitario": 0.00, "Unidade_operacional": "corrida"},
-        {"Categoria": "Colunas GC", "Item": "COLUNA GC CARBOWAX 20M 30M X 0,25MM X 0,25UM", "Fonte": "Hexis", "Formato": 800, "Preco_unitario": 0.00, "Unidades_por_formato": 800, "Custo_unitario": 0.00, "Unidade_operacional": "corrida"},
+        {"Categoria": "Colunas GC", "Item": "COLUNA GC DB-5MS ULTRA INERTE 30M X 0,25MM X 0,25UM", "Fonte": "Hexis", "Formato": 800, "Preco_unitario": 3500.00, "Unidades_por_formato": 800, "Custo_unitario": 10.00, "Unidade_operacional": "corrida"},
+        {"Categoria": "Colunas GC", "Item": "COLUNA GC CARBOWAX 20M 30M X 0,25MM X 0,25UM", "Fonte": "Hexis", "Formato": 800, "Preco_unitario": 3500.00, "Unidades_por_formato": 800, "Custo_unitario": 10.00, "Unidade_operacional": "corrida"},
     ]
     return pd.DataFrame(rows)
 
