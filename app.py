@@ -95,9 +95,9 @@ def default_consumables_ref() -> pd.DataFrame:
         {"Categoria": "Padrões e Controles", "Item": "Bile Acids Standard Mixture (SMB00967-1ML)", "Fonte": "Sigma", "Formato": 1, "Preco_unitario": 1409.00, "Unidades_por_formato": 1, "Custo_unitario": 1409.00, "Unidade_operacional": "un"},
         {"Categoria": "Padrões e Controles", "Item": "13C-Short Chain Fatty Acids Plasma Mixture (SBR00034-1ML)", "Fonte": "Sigma", "Formato": 1, "Preco_unitario": 2098.00, "Unidades_por_formato": 1, "Custo_unitario": 2098.00, "Unidade_operacional": "un"},
         {"Categoria": "Padrões e Controles", "Item": "Deuterated Amino Acid Standard Mixture (SMB00917-10ML)", "Fonte": "Sigma", "Formato": 1, "Preco_unitario": 2301.00, "Unidades_por_formato": 1, "Custo_unitario": 2301.00, "Unidade_operacional": "un"},
-        {"Categoria": "Padrões e Controles", "Item": "Methoxyamine hydrochloride (1a-BSTFA protocol, 89803-1G)", "Fonte": "Merck", "Formato": 1, "Preco_unitario": 300.00, "Unidades_por_formato": 1, "Custo_unitario": 1.00, "Unidade_operacional": "un"},
-        {"Categoria": "Padrões e Controles", "Item": "Piridina (1b-BSTFA protocol, 270970-100ML)", "Fonte": "Merck", "Formato": 1, "Preco_unitario": 790.00, "Unidades_por_formato": 1, "Custo_unitario": 8.00, "Unidade_operacional": "un"},
-        {"Categoria": "Padrões e Controles", "Item": "BSTFA (2-BSTFA protocol, B-023-10X1ML)", "Fonte": "Merck", "Formato": 1, "Preco_unitario": 1500.00, "Unidades_por_formato": 1, "Custo_unitario": 15.00, "Unidade_operacional": "un"},        
+        {"Categoria": "Padrões e Controles", "Item": "BSTFA-1a Methoxyamine hydrochloride (89803-1G)", "Fonte": "Merck", "Formato": 1, "Preco_unitario": 300.00, "Unidades_por_formato": 1, "Custo_unitario": 1.00, "Unidade_operacional": "un"},
+        {"Categoria": "Padrões e Controles", "Item": "BSTFA-1b Piridina (270970-100ML)", "Fonte": "Merck", "Formato": 1, "Preco_unitario": 790.00, "Unidades_por_formato": 1, "Custo_unitario": 8.00, "Unidade_operacional": "un"},
+        {"Categoria": "Padrões e Controles", "Item": "BSTFA-2  BSTFA (B-023-10X1ML)", "Fonte": "Merck", "Formato": 1, "Preco_unitario": 1500.00, "Unidades_por_formato": 1, "Custo_unitario": 15.00, "Unidade_operacional": "un"},        
 
         # Colunas HPLC (R$/corrida)
         {"Categoria": "Colunas HPLC", "Item": "ACQUITY UPLC HSS T3 Column, 2.1 mm X 50 mm", "Fonte": "Waters", "Formato": 800, "Preco_unitario": 8000.00, "Unidades_por_formato": 800, "Custo_unitario": 10.00, "Unidade_operacional": "corrida"},
